@@ -11,8 +11,8 @@ object Day01 {
         val leftSorted = leftList.sorted()
         val rightSorted = rightList.sorted()
 
-        return leftSorted.mapIndexed { index, value ->
-            (value - rightSorted[index]).absoluteValue
+        return leftSorted.zip(rightSorted) { left, right ->
+            (left - right).absoluteValue
         }.sum()
     }
 
